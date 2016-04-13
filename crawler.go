@@ -88,7 +88,7 @@ func CrawlerMajor(majorversion string) (versionlist prettyversionrows, err error
 			resultrow.ReleaseDate = fmt.Sprintf("%s", pdt.Format(timeFormat))
 		}
 
-		if resultrow.MajorVersion == getVersionByName(strings.ToUpper(majorversion)) {
+		if resultrow.MajorVersion == GetVersionByName(strings.ToUpper(majorversion)) {
 			result = append(result, resultrow)
 		}
 
@@ -114,7 +114,7 @@ func (a prettyversionrows) Len() int           { return len(a) }
 func (a prettyversionrows) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a prettyversionrows) Less(i, j int) bool { return a[i].ReleaseDate < a[j].ReleaseDate }
 
-func getVersionByName(versionname string) (versionnumber string) {
+func GetVersionByName(versionname string) (versionnumber string) {
 	switch versionname {
 	case "2016":
 		return "13.0"

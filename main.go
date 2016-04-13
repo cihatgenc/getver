@@ -7,10 +7,10 @@ import (
 )
 
 // compile passing -ldflags "-X main.versionNumber <build>"
-var versionNumber = ""
+var VERSION = ""
 
 func main() {
-	fmt.Printf("GetVer Version: %s\n", versionNumber)
+	fmt.Printf("GetVer Version: %s\n", VERSION)
 
 	router := NewRouter()
 
