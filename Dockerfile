@@ -6,7 +6,7 @@ RUN mkdir /opt && \
 	apk add --update ca-certificates && \
 	update-ca-certificates
 
-COPY getver /opt
+RUN wget -O /opt/getver https://dl.dropboxusercontent.com/u/48462121/getver_linux_amd64
 
 EXPOSE 9080
 
